@@ -5,26 +5,48 @@
   <title>Norman vs. GOMS vs. KLM – Cognitive Models</title>
 
   <style>
-    /* Minimal styling allowed in Lab 01: color only */
+    /* Strictly following Lab 01 CSS: color, background-color, font-family, font-size */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #ffffff;
+    }
+    nav ul {
+      background-color: #ecf0f1;
+    }
+    h2 {
+      color: #2c3e50;
+      background-color: #dcdde1;
+    }
+    /* Comparison Row Colors */
     .row-norman { background-color: #fff3cd; } /* warm amber */
     .row-goms   { background-color: #e7f3ff; } /* light blue */
     .row-klm    { background-color: #e9f7ef; } /* light green */
 
     .key-takeaway {
       background-color: #fff3cd;
-      padding: 0.5em;
+      color: #856404;
+      /* Padding is forbidden in Lab 01, using font-size for distinction */
+      font-size: 1.1rem;
+    }
+    footer {
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <!-- Page header -->
   <header>
     <h1>Norman vs. GOMS vs. KLM</h1>
     <p>Model-based evaluation and cognitive models (Dix et al., Chapter 12)</p>
   </header>
 
-  <!-- Primary navigation -->
   <nav aria-label="Primary navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -33,22 +55,14 @@
       <li><a href="analysis.html">Interaction Analysis</a></li>
       <li><a href="norman2klm.html" aria-current="page">Norman–GOMS–KLM</a></li>
       <li><a href="assignment01.html">Lab 01 Rules</a></li>
-
     </ul>
   </nav>
 
-  <!-- Main content -->
   <main>
-
-    <!-- Comparison section -->
     <section>
-      <h2>Clean Comparison (Class &amp; Exam Reference)</h2>
-
+      <h2>Model Comparison Matrix</h2>
       <table border="1">
-        <caption>
-          Model-based evaluation: what each model explains vs. predicts
-        </caption>
-
+        <caption>Comparison of Model Scope (Dix et al., Ch 12)</caption>
         <thead>
           <tr>
             <th scope="col">Model</th>
@@ -57,172 +71,81 @@
             <th scope="col">What it Predicts</th>
           </tr>
         </thead>
-
         <tbody>
           <tr class="row-norman">
             <th scope="row">Norman</th>
-            <td>Cognitive / descriptive</td>
-            <td>Understanding, errors, feedback, gulfs</td>
-            <td>❌ Nothing (no performance prediction)</td>
+            <td>Cognitive / Descriptive</td>
+            <td>Understanding, errors, and feedback gulfs.</td>
+            <td>❌ No quantitative timing.</td>
           </tr>
-
           <tr class="row-goms">
             <th scope="row">GOMS</th>
-            <td>Predictive / analytic</td>
-            <td>Task structure for expert users</td>
-            <td>✔ Relative efficiency</td>
+            <td>Predictive / Analytic</td>
+            <td>Task structure and selection rules.</td>
+            <td>✔ Relative efficiency.</td>
           </tr>
-
           <tr class="row-klm">
             <th scope="row">KLM</th>
-            <td>Predictive / quantitative</td>
-            <td>Low-level physical and motor actions</td>
-            <td>✔ Execution time</td>
+            <td>Predictive / Quantitative</td>
+            <td>Low-level physical/motor actions.</td>
+            <td>✔ Exact execution time.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- KLM operators -->
     <section>
-      <h2>KLM Operators (Execution-Level Primitives)</h2>
-
-      <p>
-        The Keystroke-Level Model (KLM) decomposes the <strong>execution phase</strong>
-        of interaction into a small set of primitive operators. KLM assumes the user
-        is expert and that the method has already been chosen.
-      </p>
-
+      <h2>KLM Operators: The Seven Primitives</h2>
+      <p>The Keystroke-Level Model (KLM) is a low-level instance of GOMS. It assumes <strong>expert, error-free</strong> performance.</p>
+      
       <table border="1">
-        <caption>
-          KLM operators (Dix et al., Chapter 12 – Cognitive Models / Physical &amp; Device Models)
-        </caption>
-
+        <caption>Seven Operators of KLM</caption>
         <thead>
           <tr>
+            <th scope="col">Code</th>
             <th scope="col">Operator</th>
-            <th scope="col">Name</th>
-            <th scope="col">Meaning</th>
+            <th scope="col">Description</th>
             <th scope="col">Example</th>
           </tr>
         </thead>
-
         <tbody>
-          <tr>
-            <th scope="row">K</th>
-            <td>Keystroking</td>
-            <td>Pressing a key (including modifiers)</td>
-            <td>Typing a character or pressing Delete</td>
-          </tr>
-
-          <tr>
-            <th scope="row">B</th>
-            <td>Button press</td>
-            <td>Pressing a mouse button</td>
-            <td>Left-click</td>
-          </tr>
-
-          <tr>
-            <th scope="row">P</th>
-            <td>Pointing</td>
-            <td>Moving pointer to a target</td>
-            <td>Move cursor to an icon</td>
-          </tr>
-
-          <tr>
-            <th scope="row">H</th>
-            <td>Homing</td>
-            <td>Switching hand between devices</td>
-            <td>Keyboard → mouse</td>
-          </tr>
-
-          <tr>
-            <th scope="row">D</th>
-            <td>Drawing</td>
-            <td>Drawing lines using a pointing device</td>
-            <td>Dragging to draw a shape</td>
-          </tr>
-
-          <tr>
-            <th scope="row">M</th>
-            <td>Mental preparation</td>
-            <td>Preparing for a physical action</td>
-            <td>Pause before clicking the correct control</td>
-          </tr>
-
-          <tr>
-            <th scope="row">R</th>
-            <td>System response</td>
-            <td>Waiting for system feedback (if required)</td>
-            <td>Application loading</td>
-          </tr>
+          <tr><th scope="row">K</th><td>Keystroking</td><td>Pressing a key</td><td>Typing 'A'</td></tr>
+          <tr><th scope="row">B</th><td>Button Press</td><td>Mouse click</td><td>Left-click</td></tr>
+          <tr><th scope="row">P</th><td>Pointing</td><td>Moving the cursor</td><td>Moving to 'Save'</td></tr>
+          <tr><th scope="row">H</th><td>Homing</td><td>Switching device</td><td>Hands to Mouse</td></tr>
+          <tr><th scope="row">D</th><td>Drawing</td><td>Manual drawing</td><td>Drawing a line</td></tr>
+          <tr><th scope="row">M</th><td>Mental Prep</td><td>Cognitive pause</td><td>Thinking before click</td></tr>
+          <tr><th scope="row">R</th><td>Response</td><td>System waiting</td><td>File loading</td></tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Worked example -->
     <section>
-      <h2>Worked Example: Correcting a Single Character</h2>
-
-      <p>
-        Example task: the user notices a single-character error in a mouse-based
-        editor, deletes it, retypes it, and returns to the insertion point.
-      </p>
-
-      <ol>
-        <li>Move hand to mouse</li>
-        <li>Position mouse after bad character</li>
-        <li>Return to keyboard</li>
-        <li>Delete character</li>
-        <li>Type correction</li>
-        <li>Reposition insertion point</li>
-      </ol>
-
-      <p>One possible KLM operator sequence:</p>
-
-      <pre>
+      <h2>Worked Example: Text Correction</h2>
+      <p>Sequence for deleting and retyping one character using a mouse:</p>
+      <pre><code>
 H[mouse]
 P B[LEFT]
 H[keyboard]
 M K[DELETE]
 K[char]
 H[mouse] M P B[LEFT]
-      </pre>
-
-      <p>
-        This sequence illustrates how KLM models only execution-level actions.
-        High-level planning, learning, and interpretation are not represented.
-      </p>
+      </code></pre>
     </section>
 
-    <!-- Key takeaways -->
     <section>
       <h2>Key Takeaways</h2>
-
       <blockquote class="key-takeaway">
         <p>
-          <strong>
-            The Keystroke-Level Model consists of seven primitive operators
-            (K, B, P, H, D, M, R) used to predict execution time for expert,
-            error-free interaction, and is a low-level instance of the GOMS framework.
-          </strong>
-        </p>
-      </blockquote>
-
-      <blockquote class="key-takeaway">
-        <p>
-          <strong>
-            KLM has only seven operators because it models execution,
-            not thinking about what to do.
-          </strong>
+          <strong>KLM only models execution, not high-level planning.</strong> 
+          It is best used for comparing the speed of two different interface designs for the same task.
         </p>
       </blockquote>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer>
+    <hr>
     <p><a href="index.html">Back to Home</a></p>
   </footer>
 
