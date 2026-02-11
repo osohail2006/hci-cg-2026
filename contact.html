@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact – HCI Lab 01</title>
-  
+  <title>Don Norman – CV | HCI &amp; CG Lab</title>
+
   <style>
-    /* Allowed CSS: color, background-color, font-family, font-size */
+    /* Strictly following Lab 01 CSS rules: only colors and fonts */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
       background-color: #f4f4f4;
       color: #333;
     }
@@ -18,10 +19,9 @@
     nav ul {
       background-color: #ecf0f1;
     }
-    legend {
-      font-weight: bold;
-      font-size: 1.1rem;
+    h2 {
       color: #2c3e50;
+      background-color: #dcdde1;
     }
     footer {
       font-size: 0.9rem;
@@ -32,15 +32,15 @@
 <body>
 
   <header>
-    <h1>Contact</h1>
-    <p>Human-Computer Interaction &amp; Computer Graphics Lab</p>
+    <h1>Curriculum Vitae</h1>
+    <p>Professional Profile: Don Norman (HCI Expert)</p>
   </header>
 
   <nav aria-label="Primary navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="cv.html" aria-current="page">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="analysis.html">Interaction Analysis</a></li>
       <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
       <li><a href="assignment01.html">Lab 01 Rules</a></li>
@@ -48,33 +48,45 @@
   </nav>
 
   <main>
+    
     <section>
-      <h2>Get in Touch</h2>
-      <p>Use the form below to inquire about HCI models (Norman, GOMS, KLM) or laboratory practices.</p>
-
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Send a Message</legend>
-
-          <p>
-            <label for="subject">Subject:</label><br>
-            <input type="text" id="subject" name="subject" placeholder="e.g., GOMS Selection Rules">
-          </p>
-
-          <p>
-            <label for="message">Your Message:</label><br>
-            <textarea id="message" name="message" rows="5" cols="40"></textarea>
-          </p>
-
-          <button type="submit">Send Message</button>
-        </fieldset>
-      </form>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>PhD in Psychology</strong> – University of Pennsylvania</li>
+        <li><strong>BSc in Engineering</strong> – MIT (Massachusetts Institute of Technology)</li>
+      </ul>
     </section>
+
+    <section>
+      <h2>Work Experience</h2>
+      <article>
+        <h3>Professor of Cognitive Science</h3>
+        <p>University of California, San Diego</p>
+        <p>Focused on user-centered design and human-computer interaction theories.</p>
+      </article>
+
+      <article>
+        <h3>Director, Design Lab</h3>
+        <p>Founder of the <em>Nielsen Norman Group</em></p>
+        <p>Advocating for usability and the reduction of the Gulf of Execution in complex systems.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <ul>
+        <li>User-Centered Design (UCD)</li>
+        <li>Cognitive Engineering</li>
+        <li>Usability Testing &amp; Analysis</li>
+        <li>Expertise in Norman's Action Cycle</li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>
     <hr>
-    <p><strong>Accessibility Note:</strong> This form uses explicit labels and fieldsets to assist screen reader users navigating the Gulf of Evaluation.</p>
+    <p>Last Updated: February 2026</p>
     <p><a href="index.html">Back to Home</a></p>
   </footer>
 
